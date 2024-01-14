@@ -98,5 +98,5 @@ def searchDataByDate(data, date):
                 n = namedObject[j]
                 n.update({ 'league' : league })
                 result.append(n)
-    print("data length is "+ len(result))
+    print("data length is "+ str(len(result)))
     return result

@@ -83,10 +83,11 @@ def analysed(amount, upPercent, downPercent):
 def profitOrLoss(amount, upperMargin, lowerMargin):
     if (upperMargin < amount or lowerMargin < amount):
         print("\nThe risk is too high, this betting is a loss waiting to happen! \nPlease do not play")
-    print("\n=====================================================================================\n\n\n")
+    print("\n=====================================================================================\n\n")
 
 
 def gameplays(games, amount,strict = False):
+    print("\n=====================================================================================\n")
     for i in range(len(games)):
         amount = amount[i] if isinstance(amount, list) else int(amount)
         gameplay(games[i], amount, strict)
