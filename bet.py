@@ -1,8 +1,8 @@
 from pprint import pprint
 import gameplay
-import webscraber
+import sportybet
 
-#enter game odds in this order
+# enter game odds in this order
 # gameOdds = [
 # {'1X2': ['5.17', '4.42', '1.67'],
 #   'Double Chance': ['2.20', '1.23', '1.19'],
@@ -35,12 +35,12 @@ import webscraber
 #   'league': 'LaLiga',
 #   'time': '2024-01-13 18:30:00'}
 # ]
-amount = 500
 # get data from sportbet.com
-data = webscraber.getDataFromApi()
-date = '2024-01-14'
-result = webscraber.searchDataByDate(data, date)
-# pprint(result)
+data = sportybet.getDataFromApi()
+date = '2024-01-22'
+data = sportybet.searchDataByDate(data, date)
+amount = float(input("\nPlease enter the amount for data analyse :    "))
+# pprint(data)
 # analyse the selected games for a win win goal
-gameplay.gameplays(result, amount)
+gameplay.gameplays(data, amount)
 

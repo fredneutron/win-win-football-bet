@@ -11,6 +11,7 @@ def gameplay(odds, amount, strict = False):
     home_or_away = float(odds['Double Chance'][1])
     away_or_draw = float(odds['Double Chance'][2])
     print("\nGamePlay")
+    print("\nBetting League: ", odds['league'])
     print("\nBetting Teams:   "+str(odds['home'])+" vs "+str(odds['away']))
     print("\nBetting amount:    N"+str(amount))
     print("\n"+str(odds['time']))
