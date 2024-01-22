@@ -74,7 +74,8 @@ def getDataFromApi():
     return data
 
 
-def searchDataByDate(data, date):
+def searchDataByDate(date):
+    data = getDataFromApi()
     result = []
     for i in range(len(data)):
         # search for the input date
