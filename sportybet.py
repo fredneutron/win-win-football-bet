@@ -61,7 +61,7 @@ def getDataFromApi():
             l =  15 if 15 < l else l
             for x in range(l):
                 leagueMarket = leagueMarkets[x]
-                if (leagueMarket["name"] == "1X2" or leagueMarket["name"] == "Double Chance"):
+                if (leagueMarket["name"] in ["1X2", "Double Chance"]):
                     # add odds to the data object
                     dataObject.update({ leagueMarket["name"] : [
                         leagueMarket["outcomes"][0]["odds"],
@@ -76,10 +76,6 @@ def getDataFromApi():
 
 def searchDataByDate(date):
     data = getDataFromApi()
-    result = []
-    for i in range(len(data)):
-        # search for the input date
-        if (date in data[i]['time']):
-            result.append(data[i])
+    result = [item for item in data if date in item['time']]
     print("\n\nData length is "+ str(len(result)))
     return result
